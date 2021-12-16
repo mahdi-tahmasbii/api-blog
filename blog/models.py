@@ -20,6 +20,9 @@ class Comment(models.Model):
     owner = models.ForeignKey('auth.User', related_name='comments', on_delete=models.CASCADE)
     post = models.ForeignKey('Post', related_name='comments', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.body
+
     class Meta:
         ordering = ['created']
 
@@ -34,3 +37,12 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'categories'
+
+
+class Like(models.Model):
+    owner = models.ForeignKey('auth.User', related_name='like', on_delete=models.CASCADE)
+    posts = models.ManyToManyField('Post', related_name='like', blank=True)
+    Comment = models.ManyToManyField('Comment', related_name='like', blank=True)
+
+    class Meta:
+        verbose_name_plural = 'like'

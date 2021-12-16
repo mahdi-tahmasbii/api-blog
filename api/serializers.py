@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from blog.models import Post, Comment, Category
+from blog.models import Post, Comment, Category, Like
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
@@ -37,7 +37,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'body', 'owner', 'comments', 'categories']
+        fields = ['id', 'title', 'body', 'owner', 'comments', 'categories', 'like']
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -47,7 +47,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'posts', 'comments', 'categories']
+        fields = ['id', 'username', 'posts', 'comments', 'categories', 'like']
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -56,3 +56,11 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = ['id', 'body', 'owner', 'post']
+
+
+class LikeSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = Like
+        fields = ['id', 'owner', 'posts', 'Comment']

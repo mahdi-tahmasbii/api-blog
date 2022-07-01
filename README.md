@@ -7,9 +7,13 @@ first
 
 in linux : ** source env/bin/activate
 in windows : ** .\env\bin\activate
+
+
 secound :
 
 pip install -r requirements.txt
+
+
 third :
 
 in linux : ** python3 manage.py runserver

@@ -1,5 +1,12 @@
 # api-blog
 
+Hi,I`m Mahdi Tahmasbi
+
+
+I build This Api With Python and Django rest framework And Use Postgresql For DataBase. This WebApp Have : Login
+& Register/Home Page/Shop List/ Detail Product/ Comment/Like
+
+
 For Running This Project You Need to Do:
 
 first

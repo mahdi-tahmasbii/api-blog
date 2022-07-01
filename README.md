@@ -3,7 +3,7 @@
 Hi,I`m Mahdi Tahmasbi
 
 
-I build This Api With Python and Django rest framework And Use Postgresql For DataBase. This WebApp Have : Login
+I built This Api With Python and Django rest framework And Used Postgresql For DataBase. This WebApp Has : Login
 & Register/Home Page/Shop List/ Detail Product/ Comment/Like
 
 
